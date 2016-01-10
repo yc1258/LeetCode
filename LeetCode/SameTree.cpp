@@ -1,9 +1,26 @@
-//
-//  SameTree.cpp
-//  LeetCode
-//
-//  Created by YanCong on 15/12/24.
-//  Copyright © 2015年 YanCong. All rights reserved.
-//
-
+/*
+ Given two binary trees, write a function to check if they are equal or not.
+ 
+ Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+ */
 #include <stdio.h>
+/**
+ * Definition for a binary tree node.
+ */
+struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        if (!p && !q)
+            return true;
+        else if((p && q) && p->val == q->val && (isSameTree(p->left, q->left) && isSameTree(p->right, q->right)))
+            return true;
+        else
+            return false;
+    }
+};

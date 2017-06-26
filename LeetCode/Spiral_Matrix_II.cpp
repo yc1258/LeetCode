@@ -11,6 +11,8 @@ You should return the following matrix:
  [ 7, 6, 5 ]
 ]
 */
+#include <vector>
+using std::vector;
 
 class Solution {
 public:
@@ -55,7 +57,7 @@ public:
 	}
 
 	//a iteration solution
-	vector<vector<int>> generateMatrix(int n) {
+	vector<vector<int>> generateMatrix1(int n) {
 		vector<vector<int>> arr(n, vector<int>(n));
 		int i = 0, j = 0, k = 1;
 		if (n == 1) {
